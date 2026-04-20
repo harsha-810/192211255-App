@@ -179,6 +179,24 @@ fun RegisterPatientScreen(onBackToLogin: () -> Unit, onRegisterSuccess: () -> Un
 
                     Button(
                         onClick = {
+                            if (name.trim().length < 2) {
+                                errorMessage = "Please enter a valid name"
+                                return@Button
+                            }
+                            if (!android.util.Patterns.PHONE.matcher(phone).matches() || phone.length < 10) {
+                                errorMessage = "Please enter a valid phone number"
+                                return@Button
+                            }
+                            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() || !email.trim().endsWith("@gmail.com", ignoreCase = true)) {
+                                errorMessage = "Only @gmail.com accounts are allowed"
+                                return@Button
+                            }
+                            val passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$".toRegex()
+                            if (!password.matches(passwordRegex)) {
+                                errorMessage = "Password is weak"
+                                return@Button
+                            }
+                            
                             isLoading = true
                             errorMessage = ""
                             scope.launch {

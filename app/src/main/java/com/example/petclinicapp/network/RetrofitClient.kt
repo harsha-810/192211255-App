@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 object RetrofitClient {
 
     // 1. Local Emulator: Use 10.0.2.2 to reach your machine's localhost from the Android Emulator
-    private const val BASE_URL = "http://10.0.2.2:5269/api/"
+    private const val BASE_URL = "http://180.235.121.245:8056/api/"
 
     var token: String = "" // In a real app, this should be tracked via DataStore or SharedPreferences
     var userName: String = ""

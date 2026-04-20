@@ -21,6 +21,7 @@ import kotlinx.serialization.Serializable
 @Serializable data object ForgotPassword
 @Serializable data class ResetPassword(val email: String)
 @Serializable data object AiAnalysis
+@Serializable data object Subscription
 
 // Routes with arguments
 @Serializable data class WritePrescription(

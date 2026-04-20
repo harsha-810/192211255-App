@@ -49,7 +49,7 @@ class MainActivity : ComponentActivity() {
                                         popUpTo(Login) { inclusive = true }
                                     }
                                 } else if (role == "Patient") {
-                                    navController.navigate(PatientMain) {
+                                    navController.navigate(Subscription) {
                                         popUpTo(Login) { inclusive = true }
                                     }
                                 } else if (role == "Admin") {
@@ -300,6 +300,21 @@ class MainActivity : ComponentActivity() {
                             onBack = { navController.popBackStack() },
                             petIdFilter = route.petId,
                             onlyUpcoming = route.onlyUpcoming
+                        )
+                    }
+
+                    composable<Subscription> {
+                        com.example.petclinicapp.ui.SubscriptionScreen(
+                            onPayClick = {
+                                navController.navigate(PatientMain) {
+                                    popUpTo(Subscription) { inclusive = true }
+                                }
+                            },
+                            onRemindLaterClick = {
+                                navController.navigate(PatientMain) {
+                                    popUpTo(Subscription) { inclusive = true }
+                                }
+                            }
                         )
                     }
                 }
