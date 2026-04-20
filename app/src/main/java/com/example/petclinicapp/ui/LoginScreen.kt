@@ -47,20 +47,20 @@ fun LoginScreen(onLoginSuccess: (String) -> Unit, onRegisterClick: () -> Unit, o
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // Branding
-            Surface(
-                shape = androidx.compose.foundation.shape.CircleShape,
-                color = ClinicTeal.copy(alpha = 0.1f),
-                modifier = Modifier.size(80.dp)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Icon(
-                        imageVector = Icons.Default.Pets,
-                        contentDescription = null,
-                        modifier = Modifier.size(40.dp),
-                        tint = ClinicTeal
-                    )
+                Surface(
+                    shape = androidx.compose.foundation.shape.CircleShape,
+                    color = Color.White,
+                    modifier = Modifier.size(80.dp),
+                    shadowElevation = 4.dp
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        androidx.compose.foundation.Image(
+                            painter = androidx.compose.ui.res.painterResource(id = com.example.petclinicapp.R.drawable.app_logo),
+                            contentDescription = null,
+                            modifier = Modifier.size(60.dp)
+                        )
+                    }
                 }
-            }
             
             Spacer(modifier = Modifier.height(16.dp))
             

@@ -36,11 +36,10 @@ fun SubscriptionScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Icon(
-                imageVector = Icons.Default.Star,
+            androidx.compose.foundation.Image(
+                painter = androidx.compose.ui.res.painterResource(id = com.example.petclinicapp.R.drawable.app_logo),
                 contentDescription = null,
-                modifier = Modifier.size(64.dp),
-                tint = ClinicTeal
+                modifier = Modifier.size(80.dp)
             )
             
             Spacer(modifier = Modifier.height(24.dp))

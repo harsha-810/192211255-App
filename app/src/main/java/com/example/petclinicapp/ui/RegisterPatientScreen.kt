@@ -59,11 +59,16 @@ fun RegisterPatientScreen(onBackToLogin: () -> Unit, onRegisterSuccess: () -> Un
             // Branding Header
             Surface(
                 shape = CircleShape,
-                color = ClinicTeal.copy(alpha = 0.1f),
-                modifier = Modifier.size(72.dp)
+                color = Color.White,
+                modifier = Modifier.size(72.dp),
+                shadowElevation = 4.dp
             ) {
                 Box(contentAlignment = Alignment.Center) {
-                    Icon(Icons.Default.Pets, contentDescription = null, tint = ClinicTeal, modifier = Modifier.size(36.dp))
+                    androidx.compose.foundation.Image(
+                        painter = androidx.compose.ui.res.painterResource(id = com.example.petclinicapp.R.drawable.app_logo),
+                        contentDescription = null,
+                        modifier = Modifier.size(54.dp)
+                    )
                 }
             }
             

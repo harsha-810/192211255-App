@@ -44,15 +44,15 @@ fun SplashScreen(onNavigateToLogin: () -> Unit) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Surface(
                     shape = CircleShape,
-                    color = Color.White.copy(alpha = 0.2f),
-                    modifier = Modifier.size(120.dp)
+                    color = Color.White,
+                    modifier = Modifier.size(120.dp),
+                    shadowElevation = 8.dp
                 ) {
                     Box(contentAlignment = Alignment.Center) {
-                        Icon(
-                            imageVector = Icons.Default.Pets,
+                        androidx.compose.foundation.Image(
+                            painter = androidx.compose.ui.res.painterResource(id = com.example.petclinicapp.R.drawable.app_logo),
                             contentDescription = null,
-                            modifier = Modifier.size(64.dp),
-                            tint = Color.White
+                            modifier = Modifier.size(90.dp)
                         )
                     }
                 }
