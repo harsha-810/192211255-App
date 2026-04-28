@@ -147,16 +147,6 @@ fun LoginScreen(onLoginSuccess: (String) -> Unit, onRegisterClick: () -> Unit, o
 
                     Button(
                         onClick = {
-                            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() || !email.trim().endsWith("@gmail.com", ignoreCase = true)) {
-                                errorMessage = "Only @gmail.com accounts are allowed"
-                                return@Button
-                            }
-                            // Weak password check removed for login as requested
-                            if (password.isBlank()) {
-                                errorMessage = "Password cannot be empty"
-                                return@Button
-                            }
-                            
                             isLoading = true
                             errorMessage = ""
                             scope.launch {
