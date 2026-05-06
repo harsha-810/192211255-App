@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.petclinicapp"
+    namespace = "com.simats.petclinicapp"
     compileSdk = 36
 
     java {
@@ -16,7 +16,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.petclinicapp"
+        applicationId = "com.simats.petclinicapp"
         minSdk = 34
         targetSdk = 35
         versionCode = 1
